@@ -5,10 +5,6 @@ WORKDIR java
 RUN apt update
 RUN apt install maven -y
 RUN mvn clean install
-RUN ls
-RUN pwd
-WORKDIR target
-RUN ls
-COPY target/knote-java-1.0.0.jar /opt/app.jar
+COPY target/*.jar /opt/app.jar
 WORKDIR /opt
 ENTRYPOINT exec java $JAVA_OPTS -jar app.jar
