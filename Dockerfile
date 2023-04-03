@@ -5,6 +5,6 @@ WORKDIR java
 RUN apt update
 RUN apt install maven -y
 RUN mvn install
-COPY /java/target/*.jar /opt/app.jar
+COPY java/target/*.jar /opt/app.jar
 WORKDIR /opt
 ENTRYPOINT exec java $JAVA_OPTS -jar app.jar
