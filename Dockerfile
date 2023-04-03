@@ -2,6 +2,7 @@ FROM adoptopenjdk/openjdk11:jdk-11.0.2.9-slim
 ENV PORT 8080
 COPY ./ java
 WORKDIR java
+RUN apt update
 RUN apt install maven -y
 RUN mvn install
 WORKDIR target
