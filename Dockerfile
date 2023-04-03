@@ -3,7 +3,7 @@ ENV PORT 8080
 COPY ./ java
 WORKDIR java
 RUN apt update
-RUN echo 'hii'
+RUN echo 'hiii'
 RUN apt install maven -y
 RUN mvn install
 WORKDIR target

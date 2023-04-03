@@ -21,7 +21,9 @@ spec:
             - name: MONGO_URL
               value: mongodb://mongo:27017/dev
           imagePullPolicy: Always
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -33,7 +35,9 @@ spec:
     - port: 80
       targetPort: 8080
   type: LoadBalancer
+
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -44,7 +48,9 @@ spec:
   resources:
     requests:
       storage: 256Mi
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -55,7 +61,9 @@ spec:
   ports:
     - port: 27017
       targetPort: 27017
+
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
