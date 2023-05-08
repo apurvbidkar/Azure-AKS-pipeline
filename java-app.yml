@@ -39,6 +39,23 @@ spec:
 ---
 
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-pvc
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: /home/ubuntu/
+
+---
+
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
