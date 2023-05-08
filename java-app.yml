@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -60,6 +61,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
@@ -106,4 +108,3 @@ spec:
         - name: storage
           persistentVolumeClaim:
             claimName: mongo-pvc
-
